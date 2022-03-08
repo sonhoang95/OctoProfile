@@ -5,7 +5,11 @@ module.exports = {
     './layout/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        midnight: '#1C2545',
+      },
+    },
   },
   plugins: [],
 };
