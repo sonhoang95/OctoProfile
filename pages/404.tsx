@@ -7,23 +7,25 @@ import Layout from '../layout/Layout';
 const NotFound: NextPage = () => {
   return (
     <Layout>
-      <div className="flex flex-col min-h-screen justify-center items-center capitalize px-6 lg:px-0">
-        <div className="w-72 h-72 lg:w-96 transform lg:h-96 flex items-center justify-center bg-pink-400 rounded-full -rotate-6 -mt-48 mb-16">
+      <div className="flex items-center flex-col justify-center min-h-screen -mt-12">
+        <div className="mb-8">
           <Image
             src="/images/404-figure.png"
-            alt="astronaut flying"
-            width={250}
-            height={360}
+            alt="flying person giving thumb ups"
+            width={450}
+            height={450}
           />
         </div>
-        <h3 className="text-center lg:text-left text-lg lg:text-3xl mb-8 tracking-wide font-bold text-gray-50">
-          Looks like this planet does not exist
-        </h3>
-        <Link href="/">
-          <a className="px-5 lg:px-8 py-2 lg:py-3 text-sm lg:text-base rounded bg-pink-400 text-gray-50 uppercase transform border border-transparent hover:bg-transparent hover:border-pink-400 transition-all duration-200">
-            Back home
-          </a>
-        </Link>
+        <div className="text-center">
+          <h3 className="text-lg lg:text-2xl font-semibold capitalize mb-4">
+            Sorry, this page you tried does not exist
+          </h3>
+          <Link href="/">
+            <a className="inline-block px-8 md:px-12 lg:px-16 text-sm lg:text-base py-2 md:py-3 lg:py-4 rounded bg-pink-400 text-gray-50 uppercase transform border border-transparent hover:bg-transparent hover:border-pink-400 transition-all duration-200">
+              Back home
+            </a>
+          </Link>
+        </div>
       </div>
     </Layout>
   );

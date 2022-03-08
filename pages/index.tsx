@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
+import { User, UserInfo } from '../components';
 import Layout from '../layout/Layout';
 
 const Home: NextPage = () => {
@@ -13,6 +13,8 @@ const Home: NextPage = () => {
       </Head>
       <Layout isHome={true}>
         <h1>Homepage</h1>
+        <UserInfo />
+        <User />
       </Layout>
     </div>
   );

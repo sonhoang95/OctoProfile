@@ -10,7 +10,7 @@ const Login = () => {
         <div className="mb-16">
           <Image
             src="/images/login-figure.png"
-            alt="astronaut flying"
+            alt="namaste pose"
             width={600}
             height={600}
           />
