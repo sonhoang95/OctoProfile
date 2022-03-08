@@ -21,7 +21,7 @@ const NotFound: NextPage = () => {
             Sorry, this page you tried does not exist
           </h3>
           <Link href="/">
-            <a className="inline-block px-8 md:px-12 lg:px-16 text-sm lg:text-base py-2 md:py-3 lg:py-4 rounded bg-pink-400 text-gray-50 uppercase transform border border-transparent hover:bg-transparent hover:border-pink-400 transition-all duration-200">
+            <a className="inline-block px-8 md:px-12 lg:px-16 text-sm lg:text-base py-2 md:py-3 lg:py-4 rounded bg-accent text-gray-50 uppercase transform border border-transparent hover:bg-transparent hover:border-accent transition-all duration-200">
               Back home
             </a>
           </Link>

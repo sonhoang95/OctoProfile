@@ -15,7 +15,10 @@ const Card = () => {
     twitter_username,
   } = githubUser;
   return (
-    <article className="bg-gray-100 px-6 py-4 text-midnight rounded">
+    <section className="relative bg-gray-100 rounded-b rounded-r px-6 py-4 text-midnight  space-y-4 mt-8">
+      <div className="absolute top-0 left-0 bg-gray-100 rounded-t transform -translate-y-full capitalize px-3 py-1 font-semibold tracking-wider text-lg text-accent">
+        User
+      </div>
       <header className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-0">
         <div className="flex items-center gap-5">
           <Image
@@ -32,7 +35,7 @@ const Card = () => {
         </div>
         <a
           href={html_url}
-          className="inline-block text-center lg:text-left px-6 py-1 rounded-full border border-teal-500 hover:bg-teal-500 hover:text-gray-100 transition-colors duration-300"
+          className="inline-block text-center lg:text-left px-6 py-1 rounded-full border border-accent hover:bg-accent hover:text-gray-100 transition-colors duration-300"
         >
           Follow
         </a>
@@ -52,7 +55,7 @@ const Card = () => {
           <MdLink className="text-xl" /> {blog}
         </a>
       </div>
-    </article>
+    </section>
   );
 };
 

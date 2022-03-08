@@ -17,7 +17,7 @@ const Login = () => {
         </div>
         <div>
           <Link href="/">
-            <a className="px-12 md:px-20 lg:px-24 text-base lg:text-lg py-3 md:py-5 lg:py-6 rounded bg-pink-400 text-gray-50 uppercase transform border border-transparent hover:bg-transparent hover:border-pink-400 transition-all duration-200">
+            <a className="px-12 md:px-20 lg:px-24 text-base lg:text-lg py-3 md:py-5 lg:py-6 rounded bg-accent text-gray-50 uppercase transform border border-transparent hover:bg-transparent hover:border-accent transition-all duration-200">
               Login
             </a>
           </Link>
