@@ -91,7 +91,7 @@ export interface Repo {
   size: number;
   stargazers_count: number;
   watchers_count: number;
-  language: any;
+  language: keyof Language;
   has_issues: boolean;
   has_projects: boolean;
   has_downloads: boolean;
@@ -107,6 +107,10 @@ export interface Repo {
   open_issues: number;
   watchers: number;
   default_branch: string;
+}
+
+export interface Language {
+  [key: string]: any;
 }
 
 export interface Owner {

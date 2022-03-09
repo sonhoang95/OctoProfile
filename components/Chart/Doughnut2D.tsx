@@ -12,7 +12,7 @@ import FusionCharts from 'fusioncharts';
 import Chart from 'fusioncharts/fusioncharts.charts';
 
 // Include the theme as fusion
-import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.gammel';
 
 // Adding the chart and theme as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, Chart, FusionTheme);
@@ -26,7 +26,7 @@ export interface ChartComponentProps {
 
 const ChartComponent = ({ data }: ChartComponentProps) => {
   const chartConfigs = {
-    type: 'pie2d', // The chart type
+    type: 'doughnut2d', // The chart type
     width: '100%', // Width of the chart
     height: '400', // Height of the chart
     dataFormat: 'json', // Data type
@@ -34,10 +34,11 @@ const ChartComponent = ({ data }: ChartComponentProps) => {
       // Chart Configuration
       chart: {
         //Set the chart caption
-        caption: 'Languages',
+        caption: 'Stars Per Languages',
         //Set the theme for your chart
-        theme: 'fusion',
-        pieRadius: '40%',
+        theme: 'gammel',
+        pieRadius: '45%',
+        showPercentValues: 0,
       },
       // Chart Data
       data,
