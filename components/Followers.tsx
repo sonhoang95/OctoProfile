@@ -5,7 +5,7 @@ import { AppContext } from '../context/AppContext';
 const Followers = () => {
   const { followers } = useContext(AppContext);
   return (
-    <section className="relative bg-gray-100 rounded-b rounded-r px-6 py-4 text-midnight  space-y-4 mt-8">
+    <section className="relative bg-gray-100 rounded-b rounded-r pl-6 py-4 text-midnight  space-y-4 mt-8">
       <div className="absolute top-0 left-0 bg-gray-100 rounded-t transform -translate-y-full capitalize px-3 py-1 font-semibold tracking-wider text-lg text-accent">
         followers
       </div>
