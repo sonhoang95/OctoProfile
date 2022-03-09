@@ -5,3 +5,7 @@
 svg {
   border-radius: 0.25rem;
 }
+
+::placeholder {
+  text-transform: capitalize;
+}

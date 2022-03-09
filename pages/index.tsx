@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Repos, User, UserInfo } from '../components';
+import { Repos, Search, User, UserInfo } from '../components';
 import Layout from '../layout/Layout';
 
 const Home: NextPage = () => {
@@ -12,6 +12,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout isHome={true}>
+        <Search />
         <UserInfo />
         <User />
         <Repos />

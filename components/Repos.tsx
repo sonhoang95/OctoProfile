@@ -41,31 +41,29 @@ const Repos = () => {
     })
     .slice(0, 5);
 
-  const chartData = [
-    {
-      label: 'HTML',
-      value: '290',
+  let { stars, forks }: any = repos.reduce(
+    (total, item) => {
+      const { stargazers_count, name, forks } = item;
+      total.stars[stargazers_count] = { label: name, value: stargazers_count };
+      total.forks[forks] = { label: name, value: forks };
+      return total;
     },
-    {
-      label: 'CSS',
-      value: '260',
-    },
-    {
-      label: 'JavaScript',
-      value: '180',
-    },
-  ];
+    { stars: {}, forks: {} }
+  );
+
+  stars = Object.values(stars).slice(0, -10).reverse();
+  forks = Object.values(forks).slice(0, -10).reverse();
 
   return (
     <section>
-      <div className="max-w-[1200px] mx-auto grid lg:grid-cols-[2fr_3fr] gap-6 px-6 lg:px-0 mb-3 lg:mb-8">
+      <div className="max-w-[1200px] mx-auto grid lg:grid-cols-[2fr_3fr] gap-6 px-6 lg:px-0 mb-6 lg:mb-8">
         {/* <DynamicExampleChart data={chartData} /> */}
         <DynamicPie2D data={mostUsedLanguages} />
-        <Column2D data={chartData} />
+        <Column2D data={stars} />
       </div>
-      <div className="max-w-[1200px] mx-auto grid lg:grid-cols-[2fr_3fr] gap-6 px-6 lg:px-0 mb-8">
+      <div className="max-w-[1200px] mx-auto grid lg:grid-cols-[2fr_3fr] gap-6 px-6 lg:px-0 mb-16">
         <Doughnut2D data={mostPopular} />
-        <Bar2D data={chartData} />
+        <Bar2D data={forks} />
       </div>
     </section>
   );
