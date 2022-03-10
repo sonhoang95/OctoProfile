@@ -13,6 +13,7 @@ export interface GlobalContext {
   followers: Follower[];
   requests: number;
   error: { show: boolean; msg: string };
+  searchGithubUser: (user: string) => void;
 }
 
 export const AppContext = React.createContext({} as GlobalContext);
@@ -28,6 +29,23 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
 
   // error
   const [error, setError] = useState({ show: false, msg: '' });
+
+  const searchGithubUser = async (user: string) => {
+    // toggle error
+    toggleError();
+    // setIsLoading(true);
+    const response = await axios(`${url}/users/${user}`).catch(err =>
+      console.error(err)
+    );
+    if (response) {
+      setGithubUser(response.data);
+    } else {
+      setError({
+        show: true,
+        msg: 'Sorry, there is no user with that username',
+      });
+    }
+  };
 
   const toggleError = (show: boolean = false, msg: string = '') => {
     setError({ show, msg });
@@ -55,7 +73,14 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <AppContext.Provider
-      value={{ githubUser, repos, followers, requests, error }}
+      value={{
+        githubUser,
+        repos,
+        followers,
+        requests,
+        error,
+        searchGithubUser,
+      }}
     >
       {children}
     </AppContext.Provider>

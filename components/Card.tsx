@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Image from 'next/image';
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
@@ -21,13 +22,15 @@ const Card = () => {
       </div>
       <header className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-0">
         <div className="flex items-center gap-5">
-          <Image
-            src={avatar_url}
-            alt={name}
-            width={100}
-            height={100}
-            className="rounded-full"
-          />
+          <div className="border-2 border-accent rounded-full flex items-center justify-center p-1">
+            <Image
+              src={avatar_url}
+              alt={name}
+              width={100}
+              height={100}
+              className="rounded-full"
+            />
+          </div>
           <div>
             <h4 className="text-lg font-bold tracking-wide">{name}</h4>
             <p className="text-gray-500">@{twitter_username || 'John Doe'}</p>
@@ -40,7 +43,7 @@ const Card = () => {
           Follow
         </a>
       </header>
-      <p className="my-4 hidden lg:block">{bio}</p>
+      <p className="my-4 hidden lg:block">"{bio}"</p>
       <div className="text-gray-700 space-y-1 mt-4 lg:mt-0">
         <p className="flex items-center gap-3">
           <MdBusiness className="text-xl" /> {company}

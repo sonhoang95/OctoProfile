@@ -3,16 +3,16 @@ import { MdSearch } from 'react-icons/md';
 import { AppContext } from '../context/AppContext';
 const Search = () => {
   const [user, setUser] = useState('');
-  const { requests, error } = useContext(AppContext);
+  const { requests, error, searchGithubUser } = useContext(AppContext);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (user) {
       // more logic
+      searchGithubUser(user);
       // optional
       setUser('');
     }
-    console.log(user);
   };
   //get things from global context
   return (
