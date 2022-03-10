@@ -1,9 +1,22 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { useContext } from 'react';
 import { Repos, Search, User, UserInfo } from '../components';
+import Loader from '../components/Loader';
+import { AppContext } from '../context/AppContext';
 import Layout from '../layout/Layout';
 
 const Home: NextPage = () => {
+  const { isLoading } = useContext(AppContext);
+
+  if (isLoading) {
+    return (
+      <Layout isHome={true}>
+        <Search />
+        <Loader />
+      </Layout>
+    );
+  }
   return (
     <div>
       <Head>

@@ -3,7 +3,8 @@ import { MdSearch } from 'react-icons/md';
 import { AppContext } from '../context/AppContext';
 const Search = () => {
   const [user, setUser] = useState('');
-  const { requests, error, searchGithubUser } = useContext(AppContext);
+  const { requests, error, searchGithubUser, isLoading } =
+    useContext(AppContext);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -17,7 +18,7 @@ const Search = () => {
   //get things from global context
   return (
     <section>
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-0 mb-6 lg:mb-8 text-midnight">
+      <div className="max-w-[1200px] mx-auto px-6 mt-8 lg:px-0 mb-6 lg:mb-8 text-midnight">
         {error.show && (
           <div className="text-red-500 text-lg font-semibold tracking-wide mb-4 capitalize text-center lg:text-left">
             <p>{error.msg}</p>
@@ -35,7 +36,7 @@ const Search = () => {
                 onChange={e => setUser(e.target.value)}
               />
               <button
-                disabled={requests === 0}
+                disabled={requests === 0 || isLoading}
                 className="rounded bg-accent text-gray-100 px-3 py-1 capitalize hover:bg-green-700 hover:text-white transition-colors duration-300 disabled:opacity-50"
               >
                 search

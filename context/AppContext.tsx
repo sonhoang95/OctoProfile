@@ -11,6 +11,7 @@ export interface GlobalContext {
   githubUser: GithubUser;
   repos: Repo[];
   followers: Follower[];
+  isLoading: boolean;
   requests: number;
   error: { show: boolean; msg: string };
   searchGithubUser: (user: string) => void;
@@ -33,7 +34,7 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const searchGithubUser = async (user: string) => {
     // toggle error
     toggleError();
-    // setIsLoading(true);
+    setIsLoading(true);
     const response = await axios(`${url}/users/${user}`).catch(err =>
       console.error(err)
     );
@@ -45,6 +46,8 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
         msg: 'Sorry, there is no user with that username',
       });
     }
+    checkRequests();
+    setIsLoading(false);
   };
 
   const toggleError = (show: boolean = false, msg: string = '') => {
@@ -80,6 +83,7 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
         requests,
         error,
         searchGithubUser,
+        isLoading,
       }}
     >
       {children}
