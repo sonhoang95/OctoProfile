@@ -10,10 +10,10 @@ const NotFound: NextPage = () => {
       <div className="flex items-center flex-col justify-center min-h-screen -mt-12">
         <div className="mb-8">
           <Image
-            src="/images/404-figure.png"
+            src="/images/login-figure.png"
             alt="flying person giving thumb ups"
-            width={450}
-            height={450}
+            width={500}
+            height={500}
           />
         </div>
         <div className="text-center">
