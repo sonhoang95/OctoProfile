@@ -22,7 +22,7 @@ export interface GithubUser {
   blog: string;
   location: string;
   email: null;
-  hireable: null;
+  hireable: boolean;
   bio: string;
   twitter_username: string;
   public_repos: number;
@@ -41,7 +41,7 @@ export interface Repo {
   private: boolean;
   owner: Owner;
   html_url: string;
-  description: null;
+  description: string;
   fork: boolean;
   url: string;
   forks_url: string;
@@ -87,7 +87,7 @@ export interface Repo {
   ssh_url: string;
   clone_url: string;
   svn_url: string;
-  homepage: null;
+  homepage: string;
   size: number;
   stargazers_count: number;
   watchers_count: number;

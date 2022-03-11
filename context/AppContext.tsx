@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { mockFollowers } from '../assets/constants/mockFollowers';
 import { mockRepos } from '../assets/constants/mockRepos';
 import { mockUser } from '../assets/constants/mockUser';
@@ -65,7 +65,7 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   // check rates
-  const checkRequests = () => {
+  const checkRequests = useCallback(() => {
     axios(`${url}/rate_limit`)
       .then(({ data }) => {
         let {
@@ -78,11 +78,11 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
         }
       })
       .catch(err => console.log(err));
-  };
+  }, []);
 
   useEffect(() => {
     checkRequests();
-  }, []);
+  }, [checkRequests]);
 
   return (
     <AppContext.Provider
