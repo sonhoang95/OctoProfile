@@ -32,7 +32,7 @@ const Home: NextPage = () => {
         />
         <meta
           property="og:image"
-          content="https://octo-profile-mocha.vercel.app/ogImage"
+          content="https://octo-profile-mocha.vercel.app/ogImage.png"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
