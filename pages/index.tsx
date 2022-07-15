@@ -1,17 +1,17 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import { useContext } from 'react';
-import { Repos, Search, User, UserInfo } from '../components';
-import Loader from '../components/Loader';
-import { AppContext } from '../context/AppContext';
-import Layout from '../layout/Layout';
+import type { NextPage } from "next";
+import Head from "next/head";
+import { useContext } from "react";
+import { Repos, Search, User, UserInfo } from "../components";
+import Loader from "../components/Loader";
+import { AppContext } from "../context/AppContext";
+import Layout from "../layout/Layout";
 
 const Home: NextPage = () => {
   const { isLoading } = useContext(AppContext);
 
   if (isLoading) {
     return (
-      <Layout isHome={true}>
+      <Layout>
         <Search />
         <Loader />
       </Layout>
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout isHome={true}>
+      <Layout>
         <Search />
         <UserInfo />
         <User />

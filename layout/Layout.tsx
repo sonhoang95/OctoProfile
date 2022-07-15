@@ -1,14 +1,11 @@
-import React from 'react';
-import { Navbar } from '../components';
+import React from "react";
 
 export interface LayoutProps {
   children: React.ReactNode;
-  isHome?: boolean;
 }
-const Layout = ({ children, isHome }: LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="bg-midnight min-h-screen flex flex-col text-gray-100">
-      {isHome ? <Navbar /> : ''}
       <main>{children}</main>
     </div>
   );
